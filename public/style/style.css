@@ -86,3 +86,26 @@ footer {
   padding: 10px;
   text-align: center;
 }
+
+.legacy-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 120px;
+      height: 40px;
+      background-color: #1a2935;
+      color: #f5f5f5;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    .legacy-button:hover {
+      background-color: #1a3c54;
+      transform: scale(1.1);
+    }
