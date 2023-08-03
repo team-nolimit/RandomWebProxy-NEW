@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  background: black;
+}
+
+* {
+  font-family: Roboto;
+}
+
+.anonimg {
+  display: block;
+  width:250px;
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  color: #ffffff;
+  text-align: center;
+  font-size: 60px;
+  margin-bottom: 5px;
+  margin-top: 100px;
+}
+
+.subtitle {
+  color: #ffffff;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 0px;
+}
+
+#input {
+  margin-top: 45px;
+  width: 45%;
+  height: 30px;
+  outline: none;
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  caret-color: #ffffff;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+}
+
+::placeholder {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+#go {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  height: 44px;
+  width: 45px;
+  background: transparent;
+  outline: none;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  border-left: none;
+}
+
+.searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
+
+{padding:0;margin:0;}
+
+.float-button{
+  font-family: 'Roboto', sans-serif;
+	position:fixed;
+	width:100px;
+	height:100px;
+	bottom:40px;
+	right:40px;
+	background-color:#ffffff;
+	color:#C4122F;
+	border-radius:50px;
+  border: 3px solid #C4122F;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999999;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 25px;
+}
+
+.float-button-text {
+  margin-top: 22px;
+}
+
+:root {
+  --color-bg: #E9F7D6;
+}
+
+.warning {
+  font-family: Montserrat, Arial, Sans-serif;
+  font-size: 15;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+mark {
+  font-family: Montserrat, Arial, Sans-serif;
+  font-size: 15;
+  font-weight: 400;
+  color: white;
+  background-color: #b24334;
+  padding: 5px 10px 5px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
