@@ -116,21 +116,12 @@ footer {
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 1); /* Completely opaque black background */
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 9999; /* Ensure it appears on top of other elements */
       display: none; /* Hide the overlay by default */
-      transition: opacity 0.3s ease; /* Add a transition for the opacity property */
-    }
-
-    .loading-overlay.show {
-      opacity: 1; /* When the class "show" is added, the loading overlay will become fully opaque */
-    }
-
-    .loading-overlay.hide {
-      opacity: 0; /* When the class "hide" is added, the loading overlay will become transparent */
     }
 
     .loading-message {
