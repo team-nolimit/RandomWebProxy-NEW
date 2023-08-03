@@ -18,6 +18,22 @@ function hideLoadingOverlay() {
   loadingOverlay.style.display = "none";
 }
 
+// Remove the "show" class after a short delay to allow the fade-out animation to complete
+  setTimeout(function() {
+    loadingOverlay.classList.remove('show');
+  }, 300); // The same duration as the CSS transition (0.3s) in milliseconds
+}
+
+// Function to handle page navigation (go back)
+function handlePageNavigation(event) {
+  if (event.persisted) {
+    hideLoadingOverlay();
+  }
+}
+
+  window.addEventListener('pageshow', handlePageNavigation);
+});
+
 function go() {
   var url = document.getElementById("input").value;
   if (url.trim() !== "") {
