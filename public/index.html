@@ -24,6 +24,7 @@
         <a href="https://youtube.com" class="side-nav-button"><i class="fab fa-youtube"></i></a>
         <a href="https://github.com" class="side-nav-button"><i class="fab fa-github"></i></a>
       </div>
+      <button class="legacy-button" onclick="redirectToLegacy()">Legacy Mode</button>
     </div>
     <div class="side-box" id="sideNav">
       <button class="close-btn" onclick="closeSideNav()">&times;</button>
@@ -63,5 +64,11 @@
   </footer>
   <script src="/scripts/script.js"></script>
   <script src="/scripts/side_nav.js"></script>
+  <script>
+    // Function to redirect to the "legacy" folder
+    function redirectToLegacy() {
+      window.location.href = "/legacy";
+    }
+  </script>
 </body>
 </html>
