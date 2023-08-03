@@ -2,9 +2,9 @@
   "name": "RandomWebProxy",
   "version": "1.0.0",
   "description": "Efficient and secure web proxy service that enables anonymous browsing and unrestricted access to the internet!",
-  "main": "app.js", // Changed "index.js" to "app.js" to match your entry point file
+  "main": "app.js",
   "scripts": {
-    "start": "node app.js" // Changed "node index.js" to "node app.js"
+    "start": "node app.js"
   },
   "author": "Nebelung",
   "dependencies": {
