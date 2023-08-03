@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RandomWeb Proxy</title>
+  <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/10aa286e-2691-4343-b823-55e445bcfd24/proxyfavicon.png?v=1667402474343">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+  <link rel="stylesheet" href="/style/style.css">
+  <style>
+    /* Add the home button styles */
+    .home-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      background: #1a2935;
+      border: none;
+      color: #f5f5f5;
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .home-btn:hover {
+      transform: scale(1.2);
+    }
+
+    /* Add a new style for the container to create space for the home button */
+    .container {
+      position: relative;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <button class="home-btn" onclick="goHome()">&#8962;</button>
+  <div class="container">
+    <img class="logo" src="https://cdn.glitch.global/10aa286e-2691-4343-b823-55e445bcfd24/Anonymous_emblem.svg.png?v=1677942826310" alt="Anonymous">
+    <h1 class="title">About Us</h1>
+    <p>Team FlexByte is a dedicated group of tech enthusiasts and cybersecurity experts on a mission to bring true internet freedom to people worldwide. We firmly believe in breaking down the barriers of internet censorship and ensuring everyone can access the web without restrictions. Our innovative web proxy solutions empower individuals to navigate the digital landscape with freedom, bypassing restrictive firewalls and unlocking a world of information and communication. At Team FlexByte, we are committed to creating a secure and open internet environment, where online liberties are upheld, and the right to access information is safeguarded. Join us as we revolutionize the way people interact with the web, making a lasting impact on the future of internet accessibility and promoting the principles of digital freedom.</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+  <footer>
+    &copy; 2023 Team FlexBytes | RandomWeb Proxy
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <script>
+    // Add the JavaScript function to go back to the home page
+    function goHome() {
+      window.location.href = "https://rwebproxy.xyz";
+    }
+  </script>
+</body>
+</html>

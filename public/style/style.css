@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+  background-color: #15202b;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #f5f5f5;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.title {
+  font-size: 36px;
+  margin-top: 20px;
+  color: #f5f5f5;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  position: relative;
+}
+
+#input {
+  flex: 1;
+  height: 40px;
+  outline: none;
+  background: #1a2935;
+  border: none;
+  color: #f5f5f5;
+  caret-color: #f5f5f5;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #1a2935;
+  margin: 0 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.social-icons a i {
+  color: #1da1f2;
+  font-size: 20px;
+}
+
+.social-icons a:hover {
+  background-color: #1a3c54;
+  color: #fff;
+}
+
+/* Update the footer styles */
+footer {
+  background-color: #1a2935;
+  color: #f5f5f5;
+  padding: 10px;
+  text-align: center;
+}

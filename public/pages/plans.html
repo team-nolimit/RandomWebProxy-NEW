@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RandomWeb Proxy</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background: #000;
+        }
+
+        header {
+          background-color: #333;
+          color: #fff;
+          padding: 20px;
+          text-align: center;
+          position: relative;
+        }
+
+        .home-btn {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          width: 40px;
+          height: 40px;
+          font-size: 24px;
+          background: #1a2935;
+          border: none;
+          color: #f5f5f5;
+          cursor: pointer;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 1;
+          transition: transform 0.3s ease-in-out;
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .home-btn:hover {
+          transform: scale(1.2);
+        }
+
+        .container {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          flex-wrap: wrap;
+          margin-top: -100px;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            position: relative; /* Enable positioning for the .new-tag */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-wrap: wrap;
+            margin-top: -100px; /* Move the containers up by 20px */
+        }
+
+        .plan {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px;
+            width: 400px; /* Width set to 400px */
+            text-align: left;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .plan:hover {
+            transform: scale(1.05);
+        }
+
+        .plan h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .plan p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        #top-text,
+        #bottom-left-text {
+            position: absolute;
+            color: #fff;
+            font-weight: 700;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+
+        #top-text {
+            bottom: 35px;
+            left: 10px;
+            font-size: 24px;
+        }
+
+        #bottom-left-text {
+            bottom: 10px;
+            left: 10px;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        #bottom-left-text a {
+            color: #fff;
+        }
+
+        /* Styles for the buttons (buy-btn and verify-btn) */
+        .buy-btn, .verify-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 24px; /* Adjusted padding to match the other buttons */
+            font-size: 16px; /* Adjusted font size to match the other buttons */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none; /* Remove underline for link-like buttons */
+        }
+
+        .buy-btn:hover, .verify-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Additional styles for the Discord logo container */
+        .discord-logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Additional styles for the Discord logo */
+        .verify-btn .discord-logo {
+            background-image: url('https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6cc3c481a15a141738_icon_clyde_white_RGB.png'); /* Replace with the URL of the Discord logo image */
+            background-repeat: no-repeat;
+            background-size: 24px; /* Set the desired size for the logo */
+            width: 24px;
+            height: 24px;
+            margin-right: 10px; /* Add some space between the image and text */
+            margin-top: 3px; /* Adjust the position of the image */
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <button class="home-btn" onclick="window.location.href='https://rwebproxy.xyz'">&#8962;</button>
+      <h1>All Plans (In Development)</h1>
+    </header>
+
+    <div class="container">
+        <div class="plan">
+            <h2>Starter Plan</h2>
+            <p>Features of the Basic Plan:</p>
+            <ul>
+                <li>Anonymous Browsing</li>
+                <li>Fast Browsing Speed</li>
+                <li>No Ads</li>
+                <li>Limited Proxy Settings</li>
+                <li>Powered by Corrosion</li>
+                <li>Discord Support</li>
+            </ul>
+            <p class="price">FREE</p>
+            <a href="/index.html" class="buy-btn">Browse Now!</a>
+        </div>
+
+        <div class="plan">
+            <h2>ProxyNinja Plan</h2>
+            <p>Features of the Premium Plan:</p>
+            <ul>
+                <li style="font-weight: bold;">All Starter Plan Features and:</li>
+                <li>Corrosion + UltraViolet Proxies</li>
+                <li>Access to ALL proxy settings</li>
+                <li>Access to Updated UI</li>
+                <li>Access to BETA Features</li>
+                <li>Discord "Premium User" Role</li>
+                <li>E-mail + DM Support</li>
+            </ul>
+            <p class="price">$1.99/month</p>
+            <a href="#" class="buy-btn">Buy Now</a>
+        </div>
+
+        <!-- New Plan: Discord Verification -->
+        <div class="plan">
+            <h2>Discord Verification</h2>
+            <p>Features of the Discord Verification Plan:</p>
+            <ul>
+                <li style="font-weight: bold;">All Starter Plan Features and:</li>
+                <li>Discord "Verified Discord User" Role</li>
+                <li>E-mail Support</li>
+            </ul>
+            <p class="price">COMING SOON</p>
+            <a href="#" class="verify-btn">
+                <span class="discord-logo"></span>
+                Verify Discord
+            </a> <!-- Changed the button label -->
+        </div>
+    </div>
+
+    <!-- "Deep Ocean" Animation Script -->
+    <canvas id="background"></canvas>
+    <div id="top-text">Deep Ocean</div>
+    <div id="bottom-left-text">Created by <a href="https://gamejolt.com/@WayflexOfficial" target="_blank">WayflexOfficial</a></div>
+    <script>
+        const canvas = document.getElementById("background"),
+            context = canvas.getContext("2d");
+        let width, height;
+
+        function resizeCanvas() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+
+        const numParticles = 400,
+            particles = [];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = Math.random() * 2 - 1;
+                this.vy = Math.random() * 2 - 1;
+                this.size = Math.random() * 4 + 1;
+                this.opacity = Math.random() * 0.5 + 0.5;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > width) {
+                    this.vx *= -1;
+                }
+                if (this.y < 0 || this.y > height) {
+                    this.vy *= -1;
+                }
+            }
+
+            draw() {
+                const gradient = context.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
+                gradient.addColorStop(0, `rgba(70, 130, 180, ${this.opacity})`);
+                gradient.addColorStop(0.6, `rgba(0, 0, 139, ${0.6 * this.opacity})`);
+                gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
+                context.fillStyle = gradient;
+                context.beginPath();
+                context.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+                context.closePath();
+                context.fill();
+            }
+        }
+
+        function createParticles() {
+            for (let i = 0; i < numParticles; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function updateParticles() {
+            for (let particle of particles) {
+                particle.update();
+                particle.draw();
+            }
+        }
+
+        const numBubbles = 50,
+            bubbles = [];
+
+        class Bubble {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = height + Math.random() * 100;
+                this.size = Math.random() * 20 + 5;
+                this.speed = Math.random() * 2 + 1;
+            }
+
+            update() {
+                this.y -= this.speed;
+                if (this.y < -this.size) {
+                    this.y = height + Math.random() * 100;
+                }
+            }
+
+            draw() {
+                const glowSize = 5 * this.size;
+                const gradient = context.createRadialGradient(this.x, this.y, 0, this.x, this.y, glowSize);
+                gradient.addColorStop(0, "rgba(255, 255, 255, 0.2)");
+                gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
+                context.fillStyle = gradient;
+                context.fillRect(this.x - glowSize, this.y - glowSize, 2 * glowSize, 2 * glowSize);
+                context.fillStyle = "rgba(0, 0, 0, 0.3)";
+                context.beginPath();
+                context.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+                context.closePath();
+                context.fill();
+            }
+        }
+
+        function createBubbles() {
+            for (let i = 0; i < numBubbles; i++) {
+                bubbles.push(new Bubble());
+            }
+        }
+
+        function updateBubbles() {
+            for (let bubble of bubbles) {
+                bubble.update();
+                bubble.draw();
+            }
+        }
+
+        function drawLighting() {
+            const gradient = context.createRadialGradient(width / 2, height / 2, width / 4, width / 2, height / 2, width / 2);
+            gradient.addColorStop(0, "rgba(255, 255, 255, 0.1)");
+            gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
+            context.fillStyle = gradient;
+            context.fillRect(0, 0, width, height);
+        }
+
+        function drawUnderwaterGlow() {
+            const gradient = context.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, width / 2);
+            gradient.addColorStop(0, "rgba(0, 200, 200, 0.15)");
+            gradient.addColorStop(0.5, "rgba(0, 100, 200, 0.075)");
+            gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
+            context.fillStyle = gradient;
+            context.fillRect(0, 0, width, height);
+        }
+
+        function animate() {
+            context.clearRect(0, 0, width, height);
+            drawLighting();
+            updateParticles();
+            updateBubbles();
+            drawUnderwaterGlow();
+            requestAnimationFrame(animate);
+        }
+
+        createParticles();
+        createBubbles();
+        animate();
+    </script>
+</body>
+</html>

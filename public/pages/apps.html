@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RandomWeb Proxy</title>
+  <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/10aa286e-2691-4343-b823-55e445bcfd24/proxyfavicon.png?v=1667402474343">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+  <link rel="stylesheet" href="/style/style.css">
+  <style>
+    /* Your existing styles for the "Apps" page */
+    .apps-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+      justify-content: center;
+    }
+
+    .app-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #1a2935;
+      color: #f5f5f5;
+      padding: 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .app-link img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .app-link span {
+      font-size: 16px;
+    }
+
+    .app-link:hover {
+      transform: scale(1.05);
+    }
+
+    .small-text {
+      font-size: 20px;
+      margin-top: 5px;
+      color: #ffffff;
+    }
+
+    /* Add the home button styles */
+    .home-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      background: #1a2935;
+      border: none;
+      color: #f5f5f5;
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .home-btn:hover {
+      transform: scale(1.2);
+    }
+
+    /* Add a new style for the container to create space for the home button */
+    .container {
+      position: relative;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <button class="home-btn" onclick="goHome()">&#8962;</button>
+  <div class="apps-container">
+    <h1 class="title">Apps (Quick Access)</h1>
+    <p class="small-text">BETA</p>
+    <div class="apps-grid">
+      <a href="https://rwebproxy.xyz/service/hvtrs8%2F-wuw%2Cymuvu%60e%2Ccmm-/" class="app-link" target="_blank">
+        <img src="https://cdn.glitch.global/3bfec3ea-fac1-4bb5-93da-234ca8f46650/red-youtube-logo-social-media-logo_197792-1803.png?v=1689718524424" alt="YouTube">
+        <span>YouTube</span>
+      </a>
+      <a href="https://rwebproxy.xyz/service/hvtr%3A-%2Ffiqcmrf.aoo/" class="app-link" target="_blank">
+        <img src="https://cdn.glitch.global/3bfec3ea-fac1-4bb5-93da-234ca8f46650/unnamed%20(3).png?v=1689718485614" alt="Discord">
+        <span>Discord</span>
+      </a>
+      <a href="https://rwebproxy.xyz/service/hvtrs8%2F-wuw%2Ctkkvoi.aoo%2F/" class="app-link" target="_blank">
+        <img src="https://cdn.glitch.global/3bfec3ea-fac1-4bb5-93da-234ca8f46650/unnamed%20(2).png?v=1689718484374" alt="TikTok">
+        <span>TikTok</span>
+      </a>
+      <a href="https://rwebproxy.xyz/service/hvtrs8%2F-wuw%2Ctuivcj.vv-/" class="app-link" target="_blank">
+        <img src="https://cdn.glitch.global/3bfec3ea-fac1-4bb5-93da-234ca8f46650/unnamed.webp?v=1689718487086" alt="Twitch">
+        <span>Twitch</span>
+      </a>
+      <a href="https://rwebproxy.xyz/service/hvtrs8%2F-wuw%2Cngtdlkx%2Ccmm-/" class="app-link" target="_blank">
+        <img src="https://cdn.glitch.global/3bfec3ea-fac1-4bb5-93da-234ca8f46650/Netflix-Symbol.png?v=1689718493243" alt="Netflix">
+        <span>Netflix</span>
+      </a>
+      <a href="https://rwebproxy.xyz/service/hvtrs8%2F-wuw%2Chwlw.aoo%2Fuencmmg/" class="app-link" target="_blank">
+        <img src="https://cdn.glitch.global/3bfec3ea-fac1-4bb5-93da-234ca8f46650/unnamed%20(3).jpg?v=1689720844995" alt="Hulu">
+        <span>Hulu</span>
+      </a>
+      <a href="https://rwebproxy.xyz/service/hvtrs8%2F-wuw%2Cilsvaercm%2Ccmm-/" class="app-link" target="_blank">
+        <img src="https://cdn.glitch.global/3bfec3ea-fac1-4bb5-93da-234ca8f46650/Instagram_logo_2022.svg.png?v=1689725488855" alt="Instagram">
+        <span>Instagram</span>
+      </a>
+      <a href="https://rwebproxy.xyz/service/hvtrs8%2F-wuw%2Crgdfiv.aoo%2F%3Drft%3F34345/" class="app-link" target="_blank">
+        <img src="https://cdn.glitch.global/3bfec3ea-fac1-4bb5-93da-234ca8f46650/reddit-logo.png?v=1689725491288" alt="Reddit">
+        <span>Reddit</span>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2023 Team FlexBytes | RandomWeb Proxy
+  </footer>
+
+  <script type="text/javascript" charset="utf-8" defer="" async="" src="chrome-extension://lnaahdmijnjnmgaalacdgakieangpjgp/inject-scripts/patch-xhr.js" data-params="{}"></script>
+  <script>
+    // Add the JavaScript function to go back to the home page
+    function goHome() {
+      window.location.href = "https://rwebproxy.xyz";
+    }
+  </script>
+</body>
+</html>
