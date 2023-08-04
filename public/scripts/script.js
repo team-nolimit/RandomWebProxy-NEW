@@ -34,16 +34,53 @@ window.addEventListener('load', function() {
   // Attach event listener to handle page navigation (go back)
   window.addEventListener('pageshow', handlePageNavigation);
 
-  function go() {
-    var url = document.getElementById("input").value;
-    if (url.trim() !== "") {
-      window.onbeforeunload = showLoadingOverlay; // Show loading screen before redirecting
-      window.location.href = "/service/gateway?url=" + url;
-    }
-  }
-
   // Hide the loading screen when the new page has finished loading
   window.addEventListener('load', function() {
     hideLoadingOverlay();
   });
 });
+
+const fetch = require('node-fetch');
+
+  const virustotalApiKey = 'a6dcad7cb3f5518ab77f17229a1105dddec3cdccf3c9ff07ea062309e22b0bbc';
+
+  async function checkForMalwareWithVirusTotal(proxifiedURL) {
+    try {
+      const url = `https://www.virustotal.com/api/v3/urls/${encodeURIComponent(proxifiedURL)}`;
+      const response = await fetch(url, {
+        headers: {
+          'x-apikey': virustotalApiKey
+        }
+      });
+
+      if (response.status === 200) {
+        const data = await response.json();
+        const scanResults = data.data.attributes.last_analysis_stats;
+
+        // Check if any scan engines detected the URL as malicious
+        const hasMalware = scanResults.malicious > 0;
+
+        return hasMalware;
+      } else {
+        console.error('Error checking with VirusTotal:', response.statusText);
+        return false;
+      }
+    } catch (error) {
+      console.error('Error checking with VirusTotal:', error.message);
+      return false;
+    }
+  }
+
+  async function go() {
+    var url = document.getElementById("input").value;
+    if (url.trim() !== "") {
+      const hasMalware = await checkForMalwareWithVirusTotal(url);
+
+      if (hasMalware) {
+        alert("The proxified website contains malware. Proceed with caution!");
+      } else {
+        window.onbeforeunload = showLoadingOverlay; // Show loading screen before redirecting
+        window.location.href = "/service/gateway?url=" + encodeURIComponent(url);
+      }
+    }
+  }
