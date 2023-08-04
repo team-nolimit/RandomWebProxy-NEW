@@ -40,9 +40,7 @@ window.addEventListener('load', function() {
   });
 });
 
-const fetch = require('node-fetch');
-
-  const virustotalApiKey = 'a6dcad7cb3f5518ab77f17229a1105dddec3cdccf3c9ff07ea062309e22b0bbc';
+const virustotalApiKey = 'a6dcad7cb3f5518ab77f17229a1105dddec3cdccf3c9ff07ea062309e22b0bbc';
 
   async function checkForMalwareWithVirusTotal(proxifiedURL) {
     try {
@@ -53,7 +51,7 @@ const fetch = require('node-fetch');
         }
       });
 
-      if (response.status === 200) {
+      if (response.ok) {
         const data = await response.json();
         const scanResults = data.data.attributes.last_analysis_stats;
 
