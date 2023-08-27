@@ -17,8 +17,9 @@ const proxy = new Corrosion({
 
 app.use('/', express.static(__dirname + '/public'));
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + "/public/index.html");
+// Route for serving the blocked.html page
+app.get('/blocked.html', (req, res) => {
+    res.sendFile(__dirname + "/public/blocked.html");
 });
 
 app.use('/', function (req, res) {
