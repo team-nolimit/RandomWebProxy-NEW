@@ -1,7 +1,7 @@
-const port = "8080";
-const Corrosion = require('./lib/server');
-const express = require('express');
-const app = express();
+const port = "8080"
+const Corrosion = require('./lib/server')
+const express = require('express')
+const app = express()
 
 const proxy = new Corrosion({
     prefix: "/service/",
@@ -11,20 +11,20 @@ const proxy = new Corrosion({
     requestMiddleware: [
         Corrosion.middleware.blacklist([
             "accounts.google.com",
-        ], "/blocked.html"), // Redirect to the blocked.html page
+        ], "Page blocked for security reasons!"),
     ]
+})
+
+app.use('/', express.static(__dirname + '/public'));
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + "/public/index.html")
 });
 
-app.use('/', function (req, res, next) {
-    if (req.url === "/blocked.html") {
-        // Serve blocked.html directly
-        res.sendFile(__dirname + "/public/blocked.html");
-    } else {
-        // Proxy all other requests
-        proxy.request(req, res);
-    }
+app.use('/', function (req, res) {
+  proxy.request(req,res)
 });
 
 app.listen(process.env.PORT || port, () => {
-    console.log(`RandomWebProxy is running at localhost:${port}`);
-});
+  console.log(`RandomWebProxy is running at localhost:${port}`)
+})
