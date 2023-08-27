@@ -11,7 +11,7 @@ const proxy = new Corrosion({
     requestMiddleware: [
         Corrosion.middleware.blacklist([
             "accounts.google.com",
-        ], "/blocked.html"), // Redirect to the blocked.html page
+        ], "/pages/blocked.html"), // Redirect to the blocked.html page
     ]
 });
 
