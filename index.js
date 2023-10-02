@@ -31,8 +31,8 @@ app.use('/service/', (req, res) => {
 
 // HTTPS Configuration
 const ssl = {
-    key: fs.readFileSync(path.join(__dirname, '/security/ssl.key')),
-    cert: fs.readFileSync(path.join(__dirname, '/security/ssl.cert')),
+    key: fs.readFileSync(path.join(__dirname, '/public/security/ssl.key')),
+    cert: fs.readFileSync(path.join(__dirname, '/public/security/ssl.cert')),
 };
 
 const server = https.createServer(ssl, app);
