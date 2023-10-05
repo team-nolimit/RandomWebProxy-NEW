@@ -7,11 +7,12 @@ window.addEventListener('load', function() {
     }
   });
 
-  // Function to show the loading screen
-  function showLoadingOverlay() {
-    var loadingOverlay = document.getElementById("loadingOverlay");
-    loadingOverlay.style.display = "flex";
-  }
+  // Function to show the loading screen with a random message
+function showLoadingOverlay() {
+  var loadingOverlay = document.getElementById("loadingOverlay");
+  loadingOverlay.style.display = "flex";
+  updateLoadingMessage(); // Update the loading message with a random one
+}
 
   // Function to hide the loading screen
   function hideLoadingOverlay() {
