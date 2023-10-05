@@ -12,7 +12,7 @@
 <body>
   <div class="loading-overlay" id="loadingOverlay">
     <i class="fas fa-spinner fa-spin"></i>
-    <div class="loading-message">Oba loves hentai...</div>
+    <div class="loading-message" id="loadingMessage">RANDOM LOADING MESSAGE...</div>
   </div>
   <div class="side-nav-container">
     <button class="open-btn" onclick="openSideNav()">&#9776;</button>
@@ -67,10 +67,28 @@
   <script src="/scripts/script.js"></script>
   <script src="/scripts/side_nav.js"></script>
   <script>
+    // Array of random loading messages
+    var loadingMessages = [
+      "Loading...",
+      "Please wait...",
+      "Fetching content...",
+      "Getting things ready...",
+      "Almost there...",
+      "Hold on a moment...",
+      "Loading awesomeness...",
+    ];
     // Function to redirect to the "legacy" folder
     function redirectToLegacy() {
       window.location.href = "/legacy/index.html";
     }
+    // Function to select and update a random loading message
+    function updateLoadingMessage() {
+      var loadingMessageElement = document.getElementById("loadingMessage");
+      var randomIndex = Math.floor(Math.random() * loadingMessages.length);
+      loadingMessageElement.textContent = loadingMessages[randomIndex];
+    }
+    // Call the function to set an initial random loading message
+    updateLoadingMessage();
   </script>
 </body>
 </html>
