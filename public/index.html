@@ -167,12 +167,10 @@
     }
     // Function to select and update a random loading message
     function updateLoadingMessage() {
-      var loadingMessageElement = document.getElementById("loadingMessage");
-      var randomIndex = Math.floor(Math.random() * loadingMessages.length);
-      loadingMessageElement.textContent = loadingMessages[randomIndex];
-    }
-    // Call the function to set an initial random loading message
-    updateLoadingMessage();
+  var loadingMessageElement = document.getElementById("loadingMessage");
+  var randomIndex = Math.floor(Math.random() * loadingMessages.length);
+  loadingMessageElement.textContent = loadingMessages[randomIndex];
+}
   </script>
 </body>
 </html>
