@@ -20,10 +20,10 @@ function showLoadingOverlay() {
   updateLoadingMessage(); // Update the loading message with a random one
 }
 
-  // Function to hide the loading screen
-  function hideLoadingOverlay() {
-    var loadingOverlay = document.getElementById("loadingOverlay");
-    loadingOverlay.style.display = "none";
+// Function to hide the loading screen
+function hideLoadingOverlay() {
+  var loadingOverlay = document.getElementById("loadingOverlay");
+  loadingOverlay.style.display = "none";
 
     // Remove the "show" class after a short delay to allow the fade-out animation to complete
     setTimeout(function() {
