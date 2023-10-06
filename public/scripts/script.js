@@ -42,12 +42,17 @@ function showLoadingOverlay() {
   window.addEventListener('pageshow', handlePageNavigation);
 
   function go() {
-    var url = document.getElementById("input").value;
-    if (url.trim() !== "") {
-      window.onbeforeunload = showLoadingOverlay; // Show loading screen before redirecting
-      window.location.href = "/service/gateway?url=" + url;
-    }
+  var url = document.getElementById("input").value.trim(); // Get the input value and trim whitespace
+
+  if (url !== "") {
+    showLoadingOverlay(); // Show the loading overlay
+    // Construct the URL for redirection, replace spaces with %20 for valid URLs
+    url = "/service/gateway?url="+url;
+    
+    // Redirect to the constructed URL
+    window.location.href = url;
   }
+}
 
   // Hide the loading screen when the new page has finished loading
   window.addEventListener('load', function() {
