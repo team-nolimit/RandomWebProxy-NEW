@@ -1,11 +1,11 @@
-// Function to handle Enter key press in the search bar
-function handleKeyPress(e) {
-  if (e.keyCode === 13) {
-    // User pressed Enter in the search bar, so show the loading overlay and perform the search
-    showLoadingOverlay();
-    go(); // Call the existing go() function for the search
-  }
-}
+window.addEventListener('load', function() {
+  var input = document.getElementById("input");
+  input.addEventListener('keyup', function onEvent(e) {
+      if (e.keyCode === 13) {
+          go();
+      }
+  });
+});
 
 // Add an event listener to the input field for Enter key press
 window.addEventListener('load', function () {
