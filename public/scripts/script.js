@@ -7,11 +7,21 @@ function handleKeyPress(e) {
   }
 }
 
-// Add an event listener to the input field for Enter key press
-window.addEventListener('load', function () {
+window.addEventListener('load', function() {
   var input = document.getElementById("input");
-  input.addEventListener('keyup', handleKeyPress);
+  input.addEventListener('keyup', function onEvent(e) {
+      if (e.keyCode === 13) {
+          go();
+      }
+  });
 });
+
+function go() {
+  var url = document.getElementById("input").value;
+  if (url.trim() !== "") {
+    window.location.href = "/service/gateway?url=" + url;
+  }
+}
 
   // Function to show the loading screen with a random message
 function showLoadingOverlay() {
@@ -40,19 +50,6 @@ function hideLoadingOverlay() {
 
   // Attach event listener to handle page navigation (go back)
   window.addEventListener('pageshow', handlePageNavigation);
-
-  function go() {
-  var url = document.getElementById("input").value.trim(); // Get the input value and trim whitespace
-
-  if (url !== "") {
-    showLoadingOverlay(); // Show the loading overlay
-    // Construct the URL for redirection, replace spaces with %20 for valid URLs
-    url = "/service/gateway?url="+url;
-    
-    // Redirect to the constructed URL
-    window.location.href = url;
-  }
-}
 
   // Hide the loading screen when the new page has finished loading
   window.addEventListener('load', function() {
