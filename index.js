@@ -21,6 +21,19 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + "/public/index.html")
 });
 
+app.use('/', function (req, res, next) {
+  const forbiddenExtensions = ['.css', '.js']; // Add more extensions if needed
+
+  const requestedExtension = path.extname(req.path);
+
+  if (forbiddenExtensions.includes(requestedExtension)) {
+    res.status(403).send('Forbidden');
+  } else {
+    next();
+  }
+});
+
+
 app.use('/', function (req, res) {
   proxy.request(req,res)
 });
