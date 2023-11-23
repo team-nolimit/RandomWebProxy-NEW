@@ -21,16 +21,8 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + "/public/index.html")
 });
 
-app.use('/', function (req, res, next) {
-  if (req.originalUrl.endsWith('.js')) {
-    res.sendStatus(404);
-  } else {
-    next();
-  }
-});
-
 app.use('/', function (req, res) {
-  proxy.request(req, res)
+  proxy.request(req,res)
 });
 
 app.listen(process.env.PORT || port, () => {
