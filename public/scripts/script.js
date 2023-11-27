@@ -58,8 +58,10 @@ window.addEventListener('load', function() {
 });
 
 function openPopup() {
-      document.getElementById('popupOverlay').style.display = 'block';
-      document.getElementById('popupContainer').style.display = 'block';
+      if (!hasAcceptedTerms()) {
+        document.getElementById('popupOverlay').style.display = 'block';
+        document.getElementById('popupContainer').style.display = 'block';
+      }
     }
 
     // Function to close the popup
@@ -70,9 +72,19 @@ function openPopup() {
 
     // Function to accept the terms
     function acceptTerms() {
-      // Add any logic here to handle acceptance of terms
+      setTermsAccepted();
       alert('Terms accepted!');
       closePopup();
+    }
+
+    // Function to check if terms have been accepted
+    function hasAcceptedTerms() {
+      return document.cookie.indexOf('termsAccepted=true') !== -1;
+    }
+
+    // Function to set the terms as accepted
+    function setTermsAccepted() {
+      document.cookie = 'termsAccepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/';
     }
 
     // Open the popup on page load (you can change this behavior)
