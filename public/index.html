@@ -10,6 +10,13 @@
   <link rel="stylesheet" href="/style/side_nav.css">
 </head>
 <body>
+  <div class="popup-overlay" id="popupOverlay"></div>
+  <div class="popup-container" id="popupContainer">
+    <div class="popup-close" onclick="closePopup()">&times;</div>
+    <p>Please accept the Terms of Service to proceed.</p>
+    <button onclick="acceptTerms()">I accept the Terms of Service</button>
+  </div>
+
   <div class="loading-overlay" id="loadingOverlay">
     <i class="fas fa-spinner fa-spin"></i>
     <div class="loading-message">Launching Proxy...</div>
