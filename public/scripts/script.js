@@ -56,3 +56,26 @@ window.addEventListener('load', function() {
     hideLoadingOverlay();
   });
 });
+
+function openPopup() {
+      document.getElementById('popupOverlay').style.display = 'block';
+      document.getElementById('popupContainer').style.display = 'block';
+    }
+
+    // Function to close the popup
+    function closePopup() {
+      document.getElementById('popupOverlay').style.display = 'none';
+      document.getElementById('popupContainer').style.display = 'none';
+    }
+
+    // Function to accept the terms
+    function acceptTerms() {
+      // Add any logic here to handle acceptance of terms
+      alert('Terms accepted!');
+      closePopup();
+    }
+
+    // Open the popup on page load (you can change this behavior)
+    window.onload = function () {
+      openPopup();
+    };
